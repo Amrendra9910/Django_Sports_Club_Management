@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>{% extends 'scm/master.html' %}
+{% block title %}User Login{%endblock%}
+
+{% block body%}
+<div class="conatiner">
+    <div class="row">
+        <div class="col-md-6 col-xl-6 col-lg-6 mx-auto">
+
+
+
+<form method="POST" action="email_check">
+    {% csrf_token%}
+    <div class="form-group">
+    <label for="email">Email</label>
+    <input type="text" class="form-control" id="email" name="email">
+
+    </div>
+
+
+
+
+
+  <button type="submit" class="btn btn-primary">Send Mail</button>
+
+</form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock%}

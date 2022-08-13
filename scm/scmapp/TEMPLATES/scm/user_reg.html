@@ -1,0 +1,46 @@
+{% extends 'scm/master.html' %}
+{% block title %}User Registration{%endblock%}
+
+{% block body%}
+<div class="conatiner bg-secondary">
+
+    <div class="row">
+        <div class="col-md-6 col-xl-6 col-lg-6 mx-auto">
+             {{static}}
+<form method="POST" action="user_test">
+    {% csrf_token%}
+    <div class="form-group">
+    <label for="uname">UserName</label>
+    <input type="text" class="form-control" id="uname" name="uname" requirede>
+
+    </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" required>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+    <div class="form-group form-check">
+    <input type="radio" class="form-check-input"  value="Male" name="gender">
+    <label class="form-check-label" >Male</label>
+        <br><input type="radio" class="form-check-input" value="Female" name="gender">
+    <label class="form-check-label" >Female</label>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
+  </div>
+  <div class="form-group">
+    <label>Contact Number</label>
+      <input type="text" class="form-control" name="contact" required>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock%}

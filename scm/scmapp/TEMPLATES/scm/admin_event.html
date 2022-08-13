@@ -1,0 +1,38 @@
+{% extends 'scm/master.html' %}
+{% block title %}Admin Events{%endblock%}
+
+{% block body%}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-xl-12">
+            <br>
+            <a class="btn btn-primary" href="add_event">Add Event</a>
+            <br>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Duration</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for x in data %}
+                    <tr>
+                        <td>{{x.name}}</td>
+                        <td>{{x.date}}</td>
+                        <td>{{x.time}}</td>
+                        <td>{{x.duration}}</td>
+                        <td><a class="btn btn-danger" href="{% url 'event_delete'%}?eid={{x.eid}}" >Delete</a></td>
+                    </tr>
+                    {% endfor%}
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

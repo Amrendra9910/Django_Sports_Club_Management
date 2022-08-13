@@ -1,0 +1,38 @@
+
+</html>{% extends 'scm/master.html' %}
+{% block title %}User Login{%endblock%}
+
+{% block body%}
+<div class="conatiner bg-secondary">
+    <div class="row">
+        <div class="col-md-6 col-xl-6 col-lg-6 mx-auto">
+
+            <h3 class="text-denger">{{msg}}</h3>
+            <h3 class="text-denger">{{status}}</h3>
+
+<form method="POST" action="user_check">
+    {% csrf_token%}
+    <div class="form-group">
+    <label for="uname">UserName</label>
+    <input type="text" class="form-control" id="uname" name="uname">
+
+    </div>
+
+
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Login</button>
+
+    <a class="btn btn-link" href="mail_send">Forget Password</a>
+
+</form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock%}

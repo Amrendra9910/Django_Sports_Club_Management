@@ -1,0 +1,33 @@
+{% extends 'scm/master.html' %}
+{% block title %}User Registration{%endblock%}
+
+{% block body%}
+<div class="conatiner">
+
+    <div class="row">
+        <div class="col-md-6 col-xl-6 col-lg-6 mx-auto">
+             {{static}}
+            {{mag}}
+<form method="POST" action="data_groundbooking">
+    {% csrf_token%}
+    <div class="form-group">
+    <label for="date">Date</label>
+    <input type="date" class="form-control" id="date" name="date"  min="{{date}}" requirede>
+
+    </div>
+    <div class="form-group">
+    <label for="time">Time</label>
+    <input type="time" class="form-control" id="time" name="time"  requirede>
+
+    </div>
+
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock%}
